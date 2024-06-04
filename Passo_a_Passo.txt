@@ -1,0 +1,413 @@
+Passo a passo para criação de um carrossel animado utilizando HTML, CSS e JavaScript
+
+
+OBS: Elementos que não são de simples entendimento serão explicado no final do documento.
+
+
+Esse passo foi gerado ao ver o video do canal DevClub →  https://www.youtube.com/watch?v=7RBmpBuX68k&t=684s
+
+
+Na pasta img observe a imagem de objetivo e depois a de planejamento para entender como o fluxo de ciração do códgo vai
+funcionar 
+
+
+-------------------------------------------EXTRUTURA E ESTILO HTML E CSS-----------------------------------------------------
+
+1° Passo - Dentro do -<body>- no html criaremos um -<header>- com um container filho -<nav>- contendo 3 -<a>- que 
+representão nossos menus  -Começar- , -Informações-  e  -Fale Consoco-  
+
+
+2° Passo - No html abaixo do -<header>- colocaremos uma tag  -<main class='container'>-  que sera pai de um container
+-<div class= "list'>- para abrigar nossa lista, cada item da lista  -<div class= "list'>-  representaram  uma pagina do 
+nosso carrosel;
+
+
+3° Passo- No html dentro da  -<div class= "list'>- criaremos agora quatro <div class="list-item"> com a mesma classe e 
+dentro de cada <div class="list-item"> passaremos o seguinte conteudo, como nosso carrossel tem 4 paginas no -HTML- teremos
+a estrutura abaixo quatro vezes cada uma com seus conteudos especificos:
+
+<div class="list-item">   →   container que abriga todo conteudo de cada pagina do carrossel
+ <img src="imagens">   →   define imagem de fundo da pagina do carrossel 
+ <div class="content">   →   container que agrupa o conteudo de cada pagina do carrosel e separar esse conteudo da img
+   <h2 class="title";>bali</h2>   →   Titulo da pagina
+   <p class="description">Lorem ipsum</p>   →    Aqui passamos o paragrafo de cada pagina
+    <div class="buttons">   →   Container para agrupar os botões
+        <button>Saiba mais</button>   →   Criando um botão
+        <butyon>Acessar</buton>   →   Criando um botão
+     
+
+
+4° Passo - Agora vamos iniciar o  -CSS-  para estilização da pagina, primeiro criamos o arquivo no explorador de arquivos 
+-estyle.css- , agora no  -head-  do nosso html criamos com uma tag -<link>- onde linkamos HLTM e CSS.
+
+Vamos no google fonte e importamos a font poppins, colocando seu codgo de incorporação no  -<head>-  do html
+
+Com o arquivo criado abrimos o arquivo -CSS- , e primeiro devido cada navegador ter certas configuações default e serem
+diferentes de um pro outro vamos realizar o -resetCSS- passando o -*{}- que reverencia toda a pagina, zeramos valores de
+margen, padding, alteramos a fonte, comportamento do tamanho da tela e remoção da decoração dos textos
+
+
+
+5° Passo - No css vamos configurar o  -body{}- com uma cor de fundo, cor da fonte e tamanho da fonte
+
+
+
+6° Passo - No css vamos configurar nosso -header{}- , vamos aplicar uma largura de 80% do container pai, altura de 50px
+tornar o display flexivel, alinha os itens verticalmente no centro do container, mudamos o posicionamento para relativo,
+deixamo um valor de indice de sobreposição e colocamos a margin em auto.
+
+Agora vamos configurar nossos link's no -header a{}- (procura o links -<a>- dentro do header) vamos mudar a cor do texto,
+colocar uma margin a direita e o peso da font.
+
+
+
+7° Passo -  No css vamos configurar nosso -<main class:'container1>-  dentro do -.container{}-  vamos definir a altura como
+toda da pagina, definir a largura como toda a tela da pagina, um margin top com valor negativo para fazermos o main recuar
+no sentido do header e colocamos um overflow para que a tela não faça mais rolagem.
+
+
+
+8° Passo -  No css vamos configurar o  -.list-item {}- , vamos colocar a lagura como 100% da tela, colocar a altura como 
+100% da tela e mudar sua posição para absoluto.
+Agora dentro do list-item vamos procurar as imagens - .list-item img {}- ,
+vamos passar a formatação da imagem, sua largura como 100%, sua altura como 100% e aplicar um filtro de luz escurecendo
+a imagem.
+
+
+
+9° Passo - No css vamo configurar o  -.content{}- , aqui vamos colocar sua position absolute permitindo posicionar esse
+container em quanquer çigar da tela, com as propiedades do position vamos coloca-lo no top da tela, posicionalo a direita
+da tela, um padding a direita da tela, definir seu tamanho maximo com 80%, escolher sua cor e um sombreamento
+
+
+
+10° Passo - No css vamo configurar os  -.title{}-  e o  -.description{}-, no tittle vamos definir tamanho da fonte, peso
+da fonte e espaçamento entre as linhas, ja no description vamos definir o tamanho da fonte
+
+
+
+11° Passo - No css vamos configura a div dos botões  -.buttons{}-, aqui vamos mudar o display para grid(grade), e usando
+as propiedades do grid vamos definir numero e tamanho das colunas, altura da linha, uma margem de topo e uma espaçamento
+entre os botões.
+
+
+
+12° Passo - No css vamos conigurar agora os botões em se  -.button{}- , vamos remover a borda, mudar a cor de fundo, mudar
+o espaço entre as letras, peso da fonte, mudar o cursor do mouse quando no botão e transformar todo o texto em maiusculo.
+
+13° Passo - No css vamos agora mudar o estilo do botão quando o mouse passa por ele,  -.button:hover{}-  , mudamos a cor
+de fundo para transparente, colocamos uma borda, mudamos a cor do textos para branco e usamos uma transição de 3 segundos 
+
+
+
+14° Passo - No css vamos configurar somente o segundo botão agora vamos seleciona o botão usando nth-child para achar
+apenas o botão da segunda posição  .-button:nth-child(2)- , depois colocaremos a cor de fundo transparente, uma borda e
+mudamos a cor do texto para branco
+
+No css vamos tambem fazer o efeito do mouse, utilizando o hover que e ativado quando o mouse passa pro cima, vamos mudar
+a cor de fundo e a cor do texto 
+
+
+
+15° Passo - No html agora vamos fazer nossa thumbs, faremos um div em paralelo com a div  -<div class="list">- , a nova
+div tera a classe thumb  -<div class="thumb">- , dentro da div thumb colocaremos quatro div's cada qual com uma respectiva
+cidade -<div classe="thumb-item">- e no interior de cada  passaremos uma imagem  - <img>-  junto de outra div 
+ -<div class="content1">-  que tera em seu interior um titulo e um paragrafo.
+
+
+
+16° Passo - No html vamos criar nosso botões seta em paralelo com a div  -<div class="thumb">-  vamos criar a div
+<div class="arrows">, dentro da div criamos dois buttons com as classes next e back.
+
+
+
+17° Passo - No css vamos estilizar a thumbs, colocaremos o container principla das thumbs  -.thumb{}- um POSITION
+absolute, agora posicionamos a thumb em baixo e a esquerda, colocamos o display flex  e uma gap para espaçar as 
+thumbs.
+
+Agora no  -.thumb-item{}-  que esta no interior da -.thumb{}- vamos definir uma largura maxima, uma altura maxima
+e uma postion Relative
+
+Vamos estilizar a thumb -.t humb-item img{}- vamos definir largura e altura em 100%, dimensões do objeto em cover
+arredondamos a borda e colocamos um filtro.
+
+Por ultimo vamos estilzar o titulo e o paragrafo da thumb, na class  -.content{}- vamos colocar a position absolute
+e posicionar com um bottom e um left, desse modo o texto sobrepõe a imagem
+
+
+
+18° Passo - No css agora vamos estilizar nossos botões arrows, na classe  -.arrows{}- vamos colocar um display flex
+alinhar os itens ao centro do container, dar um espaçamento de 10px, colocar um postition absolute, posicionar em 
+baixo a esquerda e definir uma largura.
+
+Na classe  -.arrows button{}- que fica dentro de -.arrows{}-  vamos arredondar as quinas, remover a borda, colocar 
+um espaçamentop interno, mudar a cor de fundo, mudar a cor da botão, o cursor para pointer, mudar o peso e o tamanho
+ da fonte.
+
+Vamos adicionar um efeito hover, em  -.arrows button:hover{}-  vamos mudar a cor de fundo, a cor do botão e adicionar
+uma transição.
+
+
+------------------------------ ITERAÇÃO DO CARROSSEL COM JAVA SCRIPT-------------------------------------------------------
+
+
+19° Passo - Vamos inciar nosso JavaScript, primeiro criamos o arquivo  -script.js-   no explorador de arquivos, depois 
+no html vamos relaizar o link entre html e JavaScript, no nosso header adicionamos a tag 
+-<script src="script.js" defer></scripit>-
+
+
+
+20° Passo - No Js vamos criar as variaveis para armazenar a referencia dos botões next e back, para nosso container 
+principal, da lista das imagens principais o list e da nossa lista de thumbs o thumb
+
+
+
+21° Passo - No Js vamos criar uma função para manipular os valores de indice da listas  -.list-item-   e  -.thumb-items- 
+a mesma sera chamda ao aperta os botões atravez do evento  -.onclick- quando apertamos os botões -btnNext- e -btnBack-
+onde ao aperta cada botão chama a função com um elemento diferente o  -btnNext-  passa  -next-  no elemento, e  -btnBack-
+passa  -back- no elemento
+
+Criamos a função  -moveItemOnClick(type){}- e no seu interior vamos criar duas let's,  uma let  -let listItems- para 
+armazenar todos os items da lista  -.list-item- e outra let  -let thumbItems-para armazenar todos os items da lista 
+de thumb -let thumb-Item-.
+
+Depois criamos um  -if-  que no seu elemento compara se o valor que subtituira o -(type)- quando chamamos a função, é igual 
+a -'next'-  ou não, se igual o  -if-  executa, chamando a let list com o atributo appendChild  -list.appendChild-  e a let
+thumb tambem com o atributo appendChild  -thumb.appendChild- , o appendChild muda a posição dos itens dentro da lista, ele
+pega a posição atual muda para o final da lista, mas se o elemento não for igual a  -(next)-  ele executa o  -else- tambem
+chamando as let's list e thumb mas com o atributo prepend que ao contrario do appendChild joga o elemento para o inico da 
+lista  -list.prepend-  -thumb.prepend- , uma particularida que no appendChild passamos o valor inicial da lista como -0- 
+pois se trata da primeira posição da lista, porem no prepend passaremos ao invez do valor fixo a propia let com o atributo
+-.lengt-  decrecido do valor um -[-1]- que traz o tamanho da lista armazenada na let e decremntamos 1 pois a lista começa 
+do indice 0 e não do 1, se posteriorment acrecentarmos outros items as listas não precisamos mudar manualmente.
+
+Por padrão de posicionamento do HTML a imagem a ser mostrada sera sempre a ultima a ser declarada no HTML, lembrando que 
+devido a position absolute uma IMAGEMS sobrepõe a outra, ja as thumbs devido ao display flex a imagem da direita sera a
+ultimo items da lista e a imagem da esquerda a primeira da lista por padrão do row do display flex, assim manipulamos a 
+ultima e a primeira posição da lista para exibir a imagem da tela e posicionar a thumb correta a direita
+
+
+--------------------------------------------ANIMAÇOES COM CSS E JAVASCRIPT-----------------------------------------------
+
+22° Passo - No Js vamos iniciar nossa animação, para isso vamos adicionar e remover duas classes do html -.next- e -.back-
+essas classes estilizadas para fazer a animação no css,  dentro da function  -function moveItemsOnClick(type){}-  no  -if- 
+e no  -else- vamos  adicionar a variavel do container com o atributo  -classList.add()-  e um  -setTimeout(()=>{},timeout);-
+com um -.classList.remove('')- no interior de suas chaves.
+
+No  -if-  passamos nos elementos dos classList add e remove o nome da classe -.next- que sera adcionada quando o if executar
+e 1000 milsegundos depois sera removida
+
+No  -else-  passamos nos elementos dos classList add e remove o nome da classe -.back- que sera adcionada quando else executar
+e 1000 milsegundos depois sera removida
+
+
+
+
+23° Passo - Animação do botão  -next- , essa animação vai deslocar todas as thumbs em 150px do ponto inicial para o final, como
+com next pegamos o ultimo item da lista e mudamos para o primeirio a thumb movimenta da direita para a esquerda, então nosso
+ponto inicial é a direita e o final é a esquerda, a thumb que ocupa a ultima posição tambem deve aparecer gradativamente por 
+isso tambem tem uma animação separada,
+
+No css primeiro vamos animar toda a thumb, criando um  -@keyframes effectNextThumb{}- , na suas chaves passamos como atributo o
+-from{}- que define o ponto inicial da nossa animação, nas chaves do from passamos o atributo  -transform: translateX(150px)-, 
+esse define o tipo e o tamanho da animação.
+
+Agora acima do @keyframes no css vamos estilizar a classe -.thumb- somente quando seu container pai tiver as classe  -.contaiener- 
+mais a classe  -.next-  →  -.container.next .thumb{}-  e nas chaves passaremos o atributo  -animation-  e passamos os valores,  
+primeiro o nome da animação, nesse caso nosso -@keyframe- pos se tratar de uma animação especifica, o tempo de execução da animação
+o tipo de movimento da animação e o estado do final da animação.
+
+Agora vamos animar somente a ultima thumb, usando a mesma logica da primeira criaremo outro  -@keyframes effectLastThumb- porem 
+agora no seu  -from{}-  passaremos os valores de largura e opacidade em 0, e vamos estilizar somente a ultima thumb da lista chamando
+a classe da seguinte forma  -.container.next .thumb .thumb-item:nth-last-child(1){}-  dessar forma quando tivermos as classes
+-.contaier-  e  -.next-  no container pai acessamos somente o ultimo filho da lista thumb-item e estilizamos ele
+
+Dessa forma quando o container pai da  -.thumb{}-  possuir as classes -.container-  e   -.next-  o css estiliza a classe -.thumb- com
+o -@keyframes effectNextThumb{}- estiliza toda a thumb, e a classe  -.thumb-item:nth-last-child(1){}- com o -@keyframes effectLastThumb{}-
+estiliza somente o ultimo item da lista realizando as animações 
+
+
+Agora vamos pra animação do botão  -back-  seguindo a mesma logica do botão  -.next-  vamos repetir o codigo e mudar algumas coisas,
+mudamos  o  -.container.next .thumb{}- para  -.container.back .thumb{}- que estiliza agora tambem quando a classe .back é inserida ao 
+apertaro botão -back-.
+
+Criamos uma @keyframe, mas agora o identificador muda de  -@keyframes effectNextThumb{}- para -@keyframes effectBackThumb{}-e em suas 
+chaves alem do  -from-  teremos tambem um  -to- , colocamos o -from{}-  com um valor negativo e o  -to{}-  com valor 0 para mudar 
+o sentido de movimento da animação.
+
+Mudamos tambem  o -.container.next .thumb .thumb-item:nth-last-child(1){}-  para  -.container.back .thumb .thumb-item:nth-last-child(1)-
+para estilizarmos a ultima thumb tambem quando apertarmos o botão -back-
+
+
+
+24° Passo - No css vamo animar agora nossos textos e botões, primeiramente identificamos as classes que representão os titulos, os textos
+e os botões, como vamos aplicar a mesma configuração podemos concatenar as classes antes de abrir suas chaves -{}- , nas chaves vamos passar
+um deslocamento do eixo y em 50px, um filtro blur pra desfocar os elementos, opacidade em 0 para esconder os elementos e a animação -animation-
+chamando o -@keyframe- que vai reverter essas configurações gerando a animação, no  -animation- passamos o nomde do  -@keyframe-, o tempo de 
+duração da animação, um delay para inicio da animação, cadencia do movimento, numero de repetições e o estado final do elemento.
+
+Criando nosso -@keyframes showContent{}- nas suas chaves vamo reverter os valores passados nas classes  -.title-, -.description- e -.buttons-,
+voltamos o eixo -Y- de -50px- para -0-, voltamos o filtro -blur- de -20px- para -0- e a opacidade de -0- para -1-.
+
+Assim quando chamamos as classes  -.title-, -.description- e -.buttons-, deslocamos o objeto para baixo, desfocamos e escondemos, em seguida
+chamando o @keyframe revertemos esse valores criando a animação
+
+
+
+
+
+assim @keyframe define os pontos, o transform o tipo e tamanho e o animation controla a animação.
+
+
+
+
+
+
+
+
+
+1:19:41
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________Explicações de elementos complexos_____________________________________________
+
+-----------------------------------------------POSITION-------------------------------------------------------
+
+CSS position - Por padrão os elementos são posicionados de forma estatica -static-, isso siguinifica que eles ficaram
+dospostos conforme declarados no HTML. Mas podemos mudar essa padrão de posicionamento para -relative- , -absolut- ou
+-fixed-, pense que temos 3 -div- uma abaixo da outra no html, elementos x,y e z.
+
+→ Relative - Quando mudamos para -relative- o elemento(x) reserva o espaço em que foi disposto, siguinifica que outro 
+elemento(y) não vira para aquele lugar quando o elemento(x) for reposicionado, cria um ponto de referencia no canto 
+superio esquerdo do espaço reservado e agora podemos usar os atributos top, right, bottom e left, para movimentar o
+elemento conforme quisermos em relação ao ponto de referencia.
+
+→ Absolut - O -absolute- funciona de forma parecida com o -relative- a diferença é que ele não reserva o espaço, o que 
+siguinifica que quando o elemento(x) recebe o -absolut- o elemento(y) ocupa seu lugar, tambem podemos reposicionar o 
+elemento(x) com os atributos top, right, bottom e left,
+
+→ Fixed - O -fixed- mantem o elemento fixo em relação ao ponto de referencia de forma que podemos rolar a pagina mas 
+o elemento não se movimente, o contexto de posicionamento é sempre a área de renderização, exemplo, canto superior 
+esquerdo da tela do navegador.
+
+link da explicação →  https://www.kadunew.com/blog/css/posicionamento-relativo-absoluto-static-e-fixed-em-css
+
+
+-----------------------------------------------Z-INDEX-------------------------------------------------------
+
+CSS z-index - Esse atributo é utilizado para definir a ordem de sobreposição de ume elemento em relação ao outro
+dentro do -z-index- passamo um numero, o elemento com o numero maior soprepõe o elemento com o numero menor, veja
+elemento(x) = z-index:3;  -  elemento(y) = z-index:5; , nesse caso na exibição o elemento(y) sobrepõe o elemento(x)
+
+
+-----------------------------------------------OVERFLOW-------------------------------------------------------
+
+O overflow é uma propriedade especifica se o conteúdo deve ser recortado ou adicionadas barras de rolagem quando o 
+conteúdo de um elemento for muito grande para caber na área especificada.
+
+A overflowpropriedade possui os seguintes valores:
+
+visible- Padrão. O estouro não é cortado. O conteúdo é renderizado fora da caixa do elemento
+hidden- O estouro será cortado e o restante do conteúdo ficará invisível
+scroll- O overflow é cortado e uma barra de rolagem é adicionada para ver o resto do conteúdo
+auto- Semelhante a scroll, mas adiciona barras de rolagem somente quando necessário
+
+
+-----------------------------------------------OBJECT-FIT-------------------------------------------------------
+
+A propriedade CSS object-fit especifica como o conteúdo de um elemento substituído deve ser ajustado à caixa
+estabelecida pela altura e largura usadas.
+
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/object-fit
+
+
+
+-------------------------------------------------FILTER--------------------------------------------------------
+
+A propriedade CSS aplica efeitos gráficos como desfoque ou mudança de cor a um elemento. Os filtros são comumente usados 
+​​para ajustar a renderização de imagens, planos de fundo e bordas.filter
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+
+
+-------------------------------------------------TEXT-SHADOW-----------------------------------------------------
+
+A text-shadow propriedade CSS adiciona sombras ao texto. Ele aceita uma lista de sombras separadas por vírgula para serem
+ aplicadas ao texto e a qualquer um de seus arquivos decorations. Cada sombra é descrita por alguma combinação de 
+ deslocamentos X e Y do elemento, raio de desfoque e cor.
+
+
+               /* offset-x | offset-y | blur-radius | color */
+    text-shadow:    1px    ,    1px   ,      2px    , black;
+
+
+<color>
+Opcional. A cor da sombra. Pode ser especificado antes ou depois dos valores de deslocamento. Se não for especificado, 
+o valor da cor será deixado para o
+
+<offset-x> <offset-y>
+Obrigatório. Esses <length>valores especificam a distância da sombra em relação ao texto. <offset-x>especifica a 
+distância horizontal; um valor negativo coloca a sombra à esquerda do texto. <offset-y>especifica a distância vertical; 
+um valor negativo coloca a sombra acima do texto. Se ambos os valores forem 0, a sombra será colocada diretamente atrás 
+do texto, embora possa ficar parcialmente visível devido ao efeito de <blur-radius>.
+
+<blur-radius>
+Opcional. Este é um <length>valor. Quanto maior o valor, maior será o desfoque; a sombra fica mais larga e mais clara.
+ Se não for especificado, o padrão é 0.
+
+
+
+-------------------------------------------------NTH-CHILD------------------------------------------------------------------
+
+ A pseudoclasse CSS combina elementos com base nos índices dos elementos na lista filho de seus pais. Em outras palavras, o
+ seletor seleciona os elementos filhos de acordo com sua posição entre todos os elementos irmãos dentro de um elemento pai
+-.:nth-child()-  :nth-child()
+
+
+-------------------------------------------------APPEND & PREPEND ------------------------------------------------------------
+
+O metodo append e preprend acrecentão items na lista, o append no no final e prepend no inicio da lista, uma lista de com quatro
+4 elementos vai de 0 a 3, se passarmos dentrodo elemento do append um lista com uma posição  -list.append(listItems[0])-  ao ser
+executado o item da posição 0 sera tranferido para a posição 3, e o prepend funciona ao contrario  -list.append(listItems[3])- 
+o item de posição 3 iria para a posição 0
+
+
+----------------------------------------------------KEYFRAME-----------------------------------------------------------------
+
+Esse metodo é usada para animação, ele é responsavel por definir os pontos iniciais, intermediario e finais de uma animação,
+o ponto inicial é representado por -from- ou -0%- os pontos intermediario por -%- e o ponto final por -to- ou 100%.
+
+Link →  https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+
+
+----------------------------------------------------TRANSFORM-----------------------------------------------------------------
+
+A propriedade CSS permite girar, dimensionar, inclinar, movimentar ou traduzir um elemento. Ele modifica o espaço de coordenadas 
+do modelo de formatação visual CSS, passamos o tipo e tamanho da animação.
+
+Link → https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+
+
+----------------------------------------------------ANIMATION-----------------------------------------------------------------
+
+A propriedade animation realiza e controla a animação do @keyframe, passamos para animation os seguintes valores, primeiro o nome 
+ da animação a ser executada, segundo em quanto tempo essa animação sera executada, terceiro a contancia do movimento da animação,
+e em quarto o estado do elemento apos a animação
+
+Link →  https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
+
+Assim @keyframe define os pontos, o transform o tipo e tamanho e o animation controla a animação.

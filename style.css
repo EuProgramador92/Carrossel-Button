@@ -1,0 +1,295 @@
+*{ /* passo 4 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body{ /* passo 5 */
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+}
+
+header{/* passo 6 */
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin:auto;
+}
+
+header a {/* passo 6 */
+    color:#eee;
+    margin-right:40px;
+    font-weight: 300; 
+}
+
+.container{/* passo 7 */
+    height:100vh;
+    width:100vw;
+    margin-top: -50px;
+    overflow: hidden;
+/* No header nos usamos uma altura de 50px que tem por referencia o topo da pagina, como nosso main fica abaixo do header
+ao usarmos o margin-top:-50px; fazemos o main subir 50px ocupando o espaço do header, mas como o header tem o o z-index 
+nossos links sobrepõea imagem  */
+}
+
+.container .list .list-item { /* passo 8 */
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    /*Ao chamar as classe passamos o caminho completo dela em relação ao html, dessa forma se tivermos outro list-item em
+    algum lugar do codigo fora desse endereço ela não sera estilizado*/
+}
+
+.container .list .list-item img { /* passo 8 */
+    object-fit:cover;
+    width:100%;
+    height: 100%;
+    filter: brightness(50%);
+}
+
+.container .list .list-item .content { /* passo 9 */
+    position:absolute;
+    top: 20%;
+    right:10%;
+    padding-right: 30%;
+    width: 80%;
+    color:#eee;
+    text-shadow: 0 15px 10px #0004;
+}
+
+.container .list .list-item .title{ /* passo 10*/
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 1,3em;
+}
+
+.container .list .list-item .description{ /* passo 10*/
+    font-size: 1,5em;
+}
+
+.container .list .list-item .buttons{  /* passo 11*/
+    display:grid;
+    grid-template-columns:repeat(2,130px);
+    grid-template-rows: 40px;
+    margin-top: 20px;
+    gap:5px
+}
+
+.container .list .list-item .buttons button{ /* passo 12*/
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.container .list .list-item .buttons button:hover{ /* passo 13*/
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+    transition: 0.5s;
+}
+
+.container .list .list-item .buttons button:nth-child(2){ /* passo 14*/
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+}
+
+.container .list .list-item .buttons button:nth-child(2):hover{ /* passo 14*/
+    background-color: #eee;
+    color: #000;
+}
+
+.container .thumb { /* passo 17*/
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+    display: flex;
+    gap: 20px;   
+    z-index: 3;  /* Passo 25 */
+   
+}
+
+.container .thumb .thumb-item { /* passo 17*/
+    position: relative;
+    width: 130px;
+    height: 200px;
+    
+}
+
+.container .thumb .thumb-item img { /* passo 17*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+.container .thumb .content{ /* passo 17*/
+    position:absolute;
+    bottom:10px;
+    left:10px;
+}
+
+.container .arrows{ /* passo 18*/
+    display:flex;
+    align-items:center;
+    gap:10px;
+    position: absolute;
+    bottom: 120px;
+    left:120px;
+    width: 300px;  
+}
+
+.container .arrows button{ /* passo 18*/
+    border-radius:10px;
+    border:none;
+    padding: 12px 17px;
+    background-color: #eee4;
+    color:#eee;
+    cursor:pointer;
+    font-weight:700;
+    font-size:1.5em;
+}
+
+
+.container .arrows button:hover { /* passo 18*/
+    background-color: #eee;
+    color:#000;
+    transition: 0.7s;
+}
+
+
+/* Movimento da Thumb botão next*/
+.container.next .thumb{ /* passo 23 */
+    animation: effectNextThumb 0.5s linear forwards
+}
+@keyframes effectNextThumb{ /* passo 23 */
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* Movimento da ultima Thumb botão next*/
+.container.next .thumb .thumb-item:nth-last-child(1){ /* passo 23 */
+    animation: effectLastThumb 0.5s linear 1 forwards;
+}
+@keyframes effectLastThumb { /* passo 23 */
+    from{
+        width:0;
+        opacity:0;
+    }
+}
+
+
+/* Movimento da Thumb botão back*/
+.container.back .thumb{ /* passo 23 */
+    animation: effectBackThumb 0.5s linear forwards
+}
+@keyframes effectBackThumb{ /* passo 23 */
+    from{
+        transform: translateX(-150px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+/* Movimento da ultima Thumb botão back*/
+.container.back .thumb .thumb-item:nth-last-child(1){ /* passo 23 */
+    animation: effectLastThumb 0.5s linear 1 forwards;
+}
+@keyframes effectLastThumb { /* passo 23 */
+    to{
+        width:0; 
+        opacity:0;        
+    }    
+}
+
+
+/* Textos Principais*/
+
+.container .list .list-item:nth-last-child(1) .content .title,
+.container .list .list-item:nth-last-child(1) .content .description,
+.container .list .list-item:nth-last-child(1) .content .buttons{ /* passo 24 */
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity:0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+   
+}
+
+@keyframes showContent { /* passo 24 */
+    to{
+        transform:translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.container .list .list-item:nth-last-child(1) .content .title{ /* passo 24 */
+    animation-delay:1.2s;
+}
+.container .list .list-item:nth-last-child(1) .content .description{ /* passo 24 */
+    animation-delay:1.6s;
+}
+.container .list .list-item:nth-last-child(1) .content .buttons{ /* passo 24 */
+    animation-delay:2.0s;
+}
+
+
+/*Imagem Principal Next*/
+.container.next .list .list-item:nth-last-child(1) img{
+    width:150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius:30px;
+    animation: showMainImageNext 0.5s  linear 1 forwards;
+}
+
+@keyframes showMainImageNext {
+    to{
+        bottom:0;
+        left:0;
+        width:100%;
+        height:100%;
+        border-radius:0;  
+    }
+}
+
+
+/*Imagem Principal Back*/
+.container.back .list .list-item:nth-child(1) img{
+    position:absolute;
+    bottom:0;
+    left:0;
+    animation: showMainImageBack 0.5s  linear 1 forwards;
+    z-index: 2;
+}
+
+@keyframes showMainImageBack {
+    to{
+        width:100px;
+        height: 150px;
+        border-radius:10px;
+        bottom: 50px;
+        left: 60%;
+        
+        
+    }
+}
+
+
+
+
+
